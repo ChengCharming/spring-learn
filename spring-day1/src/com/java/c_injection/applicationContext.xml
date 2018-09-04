@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+        
+   <bean name="user" class="com.java.bean.User">
+   	<property name="name" value="tom"/>
+   	<property name="age" value="12"/> 
+   	<property name="car" ref="car"/> 
+   </bean> 
+   
+   <bean name ="car" class="com.java.bean.Car">
+  	 <property name="name" value="bmw"/>
+  	 <property name="color" value="yellow"/>
+   </bean>   
+   
+   <!-- ====================================================== -->
+   
+  	<bean name="user2" class="com.java.bean.User">
+  		<constructor-arg name="name" index ="0" value="jerry" type="java.lang.String"></constructor-arg>
+  		<constructor-arg name="car" index="1"  ref="car"></constructor-arg>
+  	</bean>
+      
+</beans>
