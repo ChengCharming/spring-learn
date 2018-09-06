@@ -6,4 +6,5 @@ public interface AccountDao {
 	//减钱
 	void decreaseMoney(Integer id ,double money); 
 	
+
 }

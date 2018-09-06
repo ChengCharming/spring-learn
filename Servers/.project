@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Servers</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Tomcat v7.0 Server at localhost-config/mysql-connector-java-5.1.39-bin.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/mysql-connector-java-5.1.39-bin.jar</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>

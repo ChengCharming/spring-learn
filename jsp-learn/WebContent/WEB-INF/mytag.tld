@@ -1,0 +1,26 @@
+<taglib>
+
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>Hello Taglib</short-name>
+	<tag>
+		<name>Hello</name>
+		<tag-class>com.qingke.tag.HelloTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+
+	<tag>
+		<name>HelloBody</name>
+		<tag-class>com.qingke.tag.HelloBody</tag-class>
+		<body-content>scriptless</body-content>
+	</tag>
+	
+	<tag>
+		<name>HelloAttrTag</name>
+		<tag-class>com.qingke.tag.HelloAttrTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>message</name>
+		</attribute>
+	</tag>
+</taglib>

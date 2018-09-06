@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的 
+	例如namespace="me.gacl.mapping.userMapper"就是me.gacl.mapping(包名)+userMapper(userMapper.xml文件去除后缀) -->
+<mapper namespace="My.Batis.One.Mapping.userMapper">
+	<!-- 第一行的code name password对应的是数据库里的字段 而第二行的带＃｛｝的code name password，对应的反而是POJO里的属性 -->
+	<sql id ="columns">id,name</sql>
+	
+	
+	<select id="selectSome" parameterType="Integer" resultType="My.Batis.One.Pojo.User">
+		select <include refid="columns"></include>from user where id =#{id}
+	</select>
+	
+	
+	<select id="selectById" parameterType="Integer" resultType="My.Batis.One.Pojo.User">
+		select * from user where id =#{id}
+	</select>
+	
+	<select id="selectById2" parameterType="Integer" resultMap="UesrBlogMap">
+		select * from user where id =#{id}
+	</select>
+
+	
+	<resultMap type="My.Batis.One.Pojo.User2" id="baseResultMap">
+		<result column="id" property="key" jdbcType="INTEGER" />
+		<result column="name" property="title" jdbcType="VARCHAR" />
+	</resultMap>
+	
+
+	<resultMap type="My.Batis.One.Pojo.User" id="UesrBlogMap">
+		<result column="id" property="id" jdbcType="INTEGER" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<collection property ="blogs" column="id" ofType ="My.Batis.One.Pojo.Blog"
+		select ="My.Batis.One.Mapping.BlogMapper.selectAllByUserId"></collection>
+	</resultMap>
+
+</mapper>

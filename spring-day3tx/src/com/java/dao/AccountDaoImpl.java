@@ -7,14 +7,16 @@ public class AccountDaoImpl extends JdbcDaoSupport implements AccountDao {
  //   private JdbcTemplate jt ;
 	@Override
 	public void increaseMoney(Integer id, double money) {
-		
-	//	getJdbcTemplate()
+	String sql ="update account set money =money +? where id = ?";
+	getJdbcTemplate().update(sql,money,id);
 		
 	}
 
 	@Override
 	public void decreaseMoney(Integer id, double money) {
-		// TODO Auto-generated method stub
+		String sql ="update account set money =money -? where id = ?";
+		getJdbcTemplate().update(sql,money,id);
+			
 
 	}
 
