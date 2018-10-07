@@ -19,7 +19,15 @@ public class JiNanTwo {
 	// 数组的访问和遍历	for each
 	 // learnArray();
 	  //Array 排序
-	  arraySort();
+	 // arraySort();
+		System.out.println("-----------------");
+		System.out.println(diGui(4));
+	}
+	public static int diGui(int result) {
+		if(result <2) {
+			return 1;
+		}
+		return diGui(result-1)+diGui(result-2);
 	}
  public  static void learnArray() {
 	  int[] nums = {1,2,3,4};

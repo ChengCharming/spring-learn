@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC   
+    "-//mybatis.org//DTD Mapper 3.0//EN"  
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.mapper.UserMapper">
+
+	<!-- 通过id查询用户 -->
+	<select id="findUserByid" parameterType="Integer" resultType="User">
+		select * from user where id = #{v}
+	</select>
+	
+	<!-- 通过用户名模糊查询用户 
+	#{}占位符
+	${}字符串拼接
+	-->
+	<select id="findUserByname" parameterType="String" resultType="com.java.pojo.User">
+		select * from user where username like '%${value}%'
+		<!-- "%"#{v}"%" -->
+	</select>
+	
+	<insert id="insertUser" parameterType="com.java.pojo.User" >
+	    <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+	    	select LAST_INSERT_ID()
+	    </selectKey>
+		insert into user (username,password) values (#{username},#{password})
+	</insert>
+	
+	<update id="updateByid" parameterType="com.java.pojo.User">
+		update user set username =#{username}, password =#{password} where id = #{id}
+	</update>
+	
+	<delete id="deleteByid" parameterType="Integer">
+		delete from user where id = #{v}
+	</delete>
+	
+	<select id="findUserBylimit" resultType="com.java.pojo.User">
+		select * from user limit 2,3
+	</select>
+
+</mapper>

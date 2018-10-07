@@ -12,9 +12,10 @@
 
 		请输入各项成绩
 		<form action="AddServlet" method="Post">
-			数学成绩：<input type="text" name="math" /></br> 语文成绩：<input type="text"
-				name="chinese" /></br> 英语成绩：<input type="text" name="english" /></br> <input
-				type="submit" value="确认" />
+			数学成绩：<input type="text" name="math" /></br> 
+			语文成绩：<input type="text"name="chinese" /></br> 
+			英语成绩：<input type="text" name="english" /></br>
+			 <input type="submit" value="确认" />
 		</form>
 
 		<form action="add.jsp" method="Post">

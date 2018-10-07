@@ -4,10 +4,8 @@ public class JiNanThree {
      //算法启蒙
 	public static void main(String[] args) {
 	
-		for(int i=1;i<3;i++) {
-       int x=jiecheng(i);
-      System.out.println(x);
-		}
+	System.out.println(jiecheng(5));
+	System.out.println("------------------");
 		randomF();
  }
 	static int jiecheng(int num) {

@@ -23,7 +23,7 @@ public class AccountServiceImpl implements AccountService {
 	
 		ad.decreaseMoney(id, money);
 		
-		int i=1/0;
+		//int i=1/0;
 		
 		ad.increaseMoney(id2, money);
 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+PUBLIC  "-//mybatis.org//DTD Config 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<typeAliases>
+	<!-- 	<typeAlias type="com.java.pojo.User" alias="User"/> -->
+		<package name="com.java.mybatis.pojo"/>
+	</typeAliases>
+	
+	<mappers>
+	   <!--   <mapper resource="com/java/mapper/userMapper.xml"/>   -->
+		 <package name="com.java.mapper"/> 
+	</mappers> 
+</configuration>

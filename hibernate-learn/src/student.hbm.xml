@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-Mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="my.hibernate.bean.Student" table ="student">
+	<id name ="id" column ="id">
+		<generator class ="assigned"/>
+	</id>
+			<property name="sid" column ="sid"/>
+			<property name="firstname" column ="firstname"/>
+			<property name="lastname" column ="lastname"/>
+			<property name="gender" column ="gender"/>
+			<property name="phone" column ="phone"/>
+			<property name="email" column ="email"/>
+			<property name="dateOfBirth" column ="date_of_birth"/>
+	</class>
+</hibernate-mapping>

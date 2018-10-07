@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	
+	<session-factory>
+	
+		<!-- 配置JDBC Driver -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<!-- 配置数据库连接URL -->
+		<property name="connection.url">jdbc:mysql://localhost:3306/myhibernate?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf-8</property>
+		<!-- 配置数据库用户名 -->
+		<property name="connection.username">root</property>
+		<!-- 配置数据库用户密码 -->
+		<property name="connection.password">root</property>
+
+		<!-- 配置Hibernate使用的数据库方言 -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+	
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>	
+		
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<!-- 配置事务 -->
+		<property name="hibernate.connection.isolation">4</property>
+		<!-- 指定session与线程绑定 -->
+		<property name="hibernate.current_session_context_class">thread</property>
+		
+		<mapping resource="com/java/hibernate/bean/linkman.hbm.xml"/>
+		<mapping resource="com/java/hibernate/bean/customer.hbm.xml"/>
+	
+	</session-factory>
+	
+</hibernate-configuration>
+
+

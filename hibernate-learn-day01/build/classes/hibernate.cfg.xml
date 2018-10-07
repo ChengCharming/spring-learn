@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+<session-factory>
+		
+		<!-- 配置JDBC Driver -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<!-- 配置数据库连接URL -->
+		<property name="connection.url">jdbc:mysql://localhost:3306/myhibernate?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf-8</property>
+		<!-- 配置数据库用户名 -->
+		<property name="connection.username">root</property>
+		<!-- 配置数据库用户密码 -->
+		<property name="connection.password">root</property>
+
+		<!-- 配置Hibernate使用的数据库方言 -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+	
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>	
+			<!-- 
+		## auto schema export  自动导出表结构. 自动建表
+		#hibernate.hbm2ddl.auto create		自动建表.每次框架运行都会创建新的表.以前表将会被覆盖,表数据会丢失.(开发环境中测试使用)
+		#hibernate.hbm2ddl.auto create-drop 自动建表.每次框架运行结束都会将所有表删除.(开发环境中测试使用)
+		#hibernate.hbm2ddl.auto update(推荐使用) 自动生成表.如果已经存在不会再生成.如果表有变动.自动更新表(不会删除任何数据).
+		#hibernate.hbm2ddl.auto validate	校验.不自动生成表.每次启动会校验数据库中表是否正确.校验失败.
+		 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<!-- 配置事务 -->
+		<property name="hibernate.connection.isolation">4</property>
+		<!-- 指定session与线程绑定 -->
+		<property name="hibernate.current_session_context_class">thread</property>
+	
+		<mapping resource="com/java/domain/hibernate.hbm.xml"/>
+</session-factory>
+
+
+</hibernate-configuration>

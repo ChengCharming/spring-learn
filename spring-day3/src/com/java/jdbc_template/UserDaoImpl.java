@@ -62,7 +62,7 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 	return 	super.getJdbcTemplate().query(sql, new RowMapper<User>() {
 
 			@Override
-			public User mapRow(ResultSet rs, int arg1) throws SQLException {
+			public User mapRow(ResultSet rs, int arg1)throws SQLException {
 				User user =new User();
 				user.setId(rs.getInt("id"));
 				user.setUsername(rs.getString("username"));
